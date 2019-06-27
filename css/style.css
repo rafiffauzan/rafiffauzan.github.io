@@ -1,0 +1,233 @@
+html{
+	position: relative;
+}
+
+body{
+	margin-bottom: 100px;
+	margin-top: 40px;
+}
+
+nav{
+	background-color: #4ABDAC;
+	color: #4ABDAC;
+}
+
+.jumbotron img{
+	width: 15%;
+	border: 5px solid #4ABDAC;
+	box-shadow: 1px 1px 15px cyan;
+}
+
+.jumbotron {
+	background-image: url('../img/paralax1.png');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: 0 -400px;
+	color: #DFDCE3;
+	overflow: hidden;
+}
+
+
+.jumbotron p, .jumbotron h1{
+	text-shadow: 1px 1px 15px cyan;
+}
+
+h2{
+	color: #FC4A1A;
+	text-shadow: 1px 1px 3px black;
+}
+
+hr{
+	width: 250px;
+	border-top: 3px solid #4ABDAC;
+}
+
+.about{
+	padding-top:25px;
+	min-height: 500px;
+}
+
+.pKiri, .pKanan{
+	opacity: 0;
+	transform: translate(-50px, 0) rotate(15deg);
+	transition : 1s;
+}
+
+.pKanan{
+	transform: translate(50px,0) rotate(-15deg);
+}
+
+.pKiri.pMuncul, .pKanan.pMuncul{
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+.portfolio{
+	padding-top: 30px;
+	min-height: 600px;
+	padding-bottom: 100px;
+	background-image: url('../img/paralax2.png');
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.portfolio .img-thumbnail{
+	opacity: 0;
+	transform: translate(0, -40px);
+	transition:  .5s;
+}
+
+.portfolio .img-thumbnail.muncul{
+	opacity: 1;
+	transform: translate(0,0);
+
+}
+
+.contact{
+	min-height: 300px;
+}
+
+.about p{
+	padding-top: 30px;
+}
+
+
+.portfolio .foto{
+	margin-top: 30px;
+}
+
+.portfolio img{
+	margin-top: 5px;
+}
+
+.contact{
+	padding-top: 30px;
+}
+
+.contact img{
+	width: 70px;
+	padding-top: 30px;
+}
+
+.contact img:hover{
+	filter: grayscale(100%);
+}
+
+
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+	background-color: #333;
+	padding-top: 25px;
+}
+
+footer p{
+	color: white;
+	font-size: 0.9em;
+}
+
+
+/*	OVERLAY	*/
+.overlay{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0);
+	z-index: 9999;	
+	transition: .8s;
+	text-align: center;
+	padding: 100px 0;
+}
+
+.overlay:target{
+	width: auto;
+	height: auto;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.8);
+}
+
+.overlay img{
+	max-height: 100%;
+	box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+}
+
+.overlay:target img{
+	animation: zoomDanFade 1s;
+}
+
+.overlay .close{
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -20px;
+	color: white;
+	text-decoration: none;
+	background-color: black;
+	border: 1px solid white;
+	line-height: 24px;
+	padding: 5px;
+	opacity: 0;
+
+}
+
+.overlay:target .close{
+	animation: slideDownFade .5s .5s forwards;
+}
+
+.overlay p{
+	position: absolute;
+	top:60px;
+	left: 15%;
+	margin-left: -20px;
+	color: white;
+
+}
+
+
+/* NAVIGASI */
+
+
+
+
+
+
+
+
+
+
+/* ANIMASI */
+@keyframes zoomDanFade {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideDownFade{
+	0% {
+		opacity: 0;
+		margin-top: -20px;
+	}
+
+	100%{
+		opacity: 1;
+		margin-top: 0;
+	}
+}
+
+
+
+
+
+
